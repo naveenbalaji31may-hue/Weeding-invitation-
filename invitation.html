@@ -1,22 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Wedding Invitation</title>
-    <style>
-        body{
-            margin:0;
-            background:#f5f5f5;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            min-height:100vh;
-        }
-        img{
-            width:100%;
-            max-width:700px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flower Petals Invitation</title>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to bottom,#fff5f7,#ffe4ec);
+    font-family:Georgia, serif;
+}
+
+.invitation{
+    text-align:center;
+    z-index:10;
+    background:rgba(255,255,255,0.8);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+h1{
+    color:#c2185b;
+}
+
+.petal{
+    position:fixed;
+    top:-30px;
+    width:20px;
+    height:20px;
+    background:#ff8fb1;
+    border-radius:70% 0 70% 0;
+    opacity:.8;
+    pointer-events:none;
+    animation-name:fall;
+    animation-timing-function:linear;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-30px) rotate(0deg);
+    }
+    100%{
+        transform:translateY(110vh) translateX(100px) rotate(360deg);
+    }
+}
+</style>
 </head>
+
 <body>
 
-<img src="IMG_20260729_191039.png" alt="Wedding Invitation">
+<div class="invitation">
+    <h1>You're Invited!</h1>
+    <p>Join us for our Special Celebration</p>
+    <h3>15 August 2026</h3>
+</div>
+
+<script>
+function createPetal() {
+    const petal = document.createElement("div");
+    petal.classList.add("petal");
+
+    petal.style.left = Math.random() * window.innerWidth + "px";
+
+    const size = Math.random() * 15 + 10;
+    petal.style.width = size + "px";
+    petal.style.height = size + "px";
+
+    petal.style.animationDuration = (Math.random() * 5 + 5) + "s";
+    petal.style.opacity = Math.random();
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 10000);
+}
+
+setInterval(createPetal, 250);
+</script>
+
+</body>
+</html>
