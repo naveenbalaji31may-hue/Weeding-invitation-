@@ -1,90 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flower Petals Invitation</title>
 
-<style>
-body{
-    margin:0;
-    overflow:hidden;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(to bottom,#fff5f7,#ffe4ec);
-    font-family:Georgia, serif;
-}
+<title>Subash ❤️ Selva Priya Wedding Invitation</title>
 
-.invitation{
-    text-align:center;
-    z-index:10;
-    background:rgba(255,255,255,0.8);
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.2);
-}
+<link rel="stylesheet" href="style.css">
 
-h1{
-    color:#c2185b;
-}
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-.petal{
-    position:fixed;
-    top:-30px;
-    width:20px;
-    height:20px;
-    background:#ff8fb1;
-    border-radius:70% 0 70% 0;
-    opacity:.8;
-    pointer-events:none;
-    animation-name:fall;
-    animation-timing-function:linear;
-}
-
-@keyframes fall{
-    0%{
-        transform:translateY(-30px) rotate(0deg);
-    }
-    100%{
-        transform:translateY(110vh) translateX(100px) rotate(360deg);
-    }
-}
-</style>
 </head>
 
 <body>
 
-<div class="invitation">
-    <h1>You're Invited!</h1>
-    <p>Join us for our Special Celebration</p>
-    <h3>15 August 2026</h3>
+<div id="petals"></div>
+
+<div class="bg-glow glow1"></div>
+<div class="bg-glow glow2"></div>
+<div class="bg-glow glow3"></div>
+
+<section class="hero">
+
+<div class="glass-card">
+
+<div class="top-flower">❀ ❀ ❀</div>
+
+<h1 class="main-title">
+Subash
+</h1>
+
+<h2 class="couple-name">
+&
+</h2>
+
+<h1 class="main-title">
+Selva Priya
+</h1>
+
+<div class="divider"></div>
+
+<p class="quote">
+"Two hearts, one promise, one beautiful journey.
+With the blessings of our families,
+we warmly invite you to celebrate
+our Reception and Wedding Ceremony."
+</p>
+
+<div class="divider"></div>
+
+<h2 class="welcome-text">
+🎉 Reception
+</h2>
+
+<p class="date-preview">
+
+📅 12 September 2026
+
+<br><br>
+
+🕢 7:30 PM
+
+</p>
+
+<div class="divider"></div>
+
+<h2 class="welcome-text">
+💍 Wedding
+</h2>
+
+<p class="date-preview">
+
+📅 13 September 2026
+
+<br><br>
+
+🕣 8:30 AM
+
+</p>
+
+<div class="divider"></div>
+
+<h2 class="welcome-text">
+📍 Venue
+</h2>
+
+<p class="quote">
+
+Sri Ganeshan Padmavathi Mahal
+
+</p>
+
+<a href="https://maps.app.goo.gl/QaE5LaAjvBfJkAhX9" target="_blank">
+
+<button class="open-btn">
+
+View Location
+
+</button>
+
+</a>
+<div class="divider"></div>
+
+<p class="quote">
+Your presence and blessings
+will make our celebration
+more joyful and memorable.
+</p>
+
+<div class="divider"></div>
+
+<p class="welcome-text">
+With Love ❤️
+</p>
+
+<h2 class="couple-name">
+Subash
+<br>
+&
+<br>
+Selva Priya
+</h2>
+
+<div class="top-flower">
+❀ ❀ ❀
 </div>
 
-<script>
-function createPetal() {
-    const petal = document.createElement("div");
-    petal.classList.add("petal");
+</div>
 
-    petal.style.left = Math.random() * window.innerWidth + "px";
+</section>
 
-    const size = Math.random() * 15 + 10;
-    petal.style.width = size + "px";
-    petal.style.height = size + "px";
-
-    petal.style.animationDuration = (Math.random() * 5 + 5) + "s";
-    petal.style.opacity = Math.random();
-
-    document.body.appendChild(petal);
-
-    setTimeout(() => {
-        petal.remove();
-    }, 10000);
-}
-
-setInterval(createPetal, 250);
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
