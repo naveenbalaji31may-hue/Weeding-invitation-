@@ -1,35 +1,146 @@
-body{
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&display=swap');
+
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:linear-gradient(135deg,#140707,#3a0d0d,#120404);
     overflow:hidden;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:100vh;
-    background:linear-gradient(180deg,#2b0014,#4b001f,#000);
+    font-family:'Cinzel',serif;
+    position:relative;
 }
 
-img{
+/* Welcome Card */
+
+.welcome-card{
+    width:90%;
+    max-width:420px;
+    text-align:center;
+    background:rgba(0,0,0,.45);
+    padding:45px 30px;
+    border:2px solid gold;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 35px rgba(255,215,0,.3);
+    animation:fadeZoom 1.5s ease;
+    z-index:10;
+}
+
+.welcome-card h2{
+    color:#ffffff;
+    font-size:18px;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.welcome-card h1{
+    font-family:'Great Vibes',cursive;
+    color:gold;
+    font-size:58px;
+    margin-bottom:25px;
+}
+
+.welcome-text{
+    color:#f8f2dc;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+button{
+    background:linear-gradient(45deg,#8B0000,#d4af37);
+    color:white;
+    border:none;
+    padding:16px 40px;
+    border-radius:40px;
+    font-size:20px;
+    cursor:pointer;
+    transition:.4s;
+    font-weight:bold;
+    box-shadow:0 0 20px rgba(255,215,0,.5);
+}
+
+button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 30px gold;
+}
+
+/* Rose Petals */
+
+#petals{
+    position:fixed;
+    top:0;
+    left:0;
     width:100%;
-    max-width:700px;
-    border-radius:15px;
-    box-shadow:0 0 30px rgba(255,0,80,.5);
-    position:relative;
-    z-index:2;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
 }
 
 .petal{
-    position:fixed;
-    top:-50px;
-    pointer-events:none;
-    z-index:1;
+    position:absolute;
+    top:-60px;
+    font-size:28px;
     animation:fall linear infinite;
 }
 
 @keyframes fall{
-    from{
-        transform:translateY(-10vh) rotate(0deg);
-    }
-    to{
-        transform:translateY(110vh) rotate(360deg);
-    }
+
+0%{
+transform:translateY(-60px) rotate(0deg);
+opacity:1;
+}
+
+100%{
+transform:translateY(120vh) rotate(360deg);
+opacity:.8;
+}
+
+}
+
+/* Card Animation */
+
+@keyframes fadeZoom{
+
+0%{
+opacity:0;
+transform:scale(.85);
+}
+
+100%{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.welcome-card{
+padding:35px 22px;
+}
+
+.welcome-card h1{
+font-size:46px;
+}
+
+.welcome-text{
+font-size:16px;
+}
+
+button{
+font-size:18px;
+padding:14px 30px;
+}
+
 }
