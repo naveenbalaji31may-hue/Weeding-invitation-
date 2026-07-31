@@ -1,55 +1,35 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Georgia, serif;
-    background: linear-gradient(135deg, #ffe6e6, #fff5f5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+body{
+    margin:0;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:linear-gradient(180deg,#2b0014,#4b001f,#000);
 }
 
-.invitation {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 500px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+img{
+    width:100%;
+    max-width:700px;
+    border-radius:15px;
+    box-shadow:0 0 30px rgba(255,0,80,.5);
+    position:relative;
+    z-index:2;
 }
 
-h1 {
-    color: #c2185b;
-    font-size: 2.2em;
+.petal{
+    position:fixed;
+    top:-50px;
+    pointer-events:none;
+    z-index:1;
+    animation:fall linear infinite;
 }
 
-h2 {
-    color: #880e4f;
-}
-
-.names {
-    font-size: 28px;
-    font-weight: bold;
-    color: #d81b60;
-}
-
-.details {
-    margin-top: 20px;
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    background: #d81b60;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background: #ad1457;
+@keyframes fall{
+    from{
+        transform:translateY(-10vh) rotate(0deg);
+    }
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
 }
